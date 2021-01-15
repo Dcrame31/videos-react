@@ -11,6 +11,10 @@ class App extends React.Component {
         selectedVideo: null
     }
 
+    componentDidMount() {
+        this.onTermSubmit('plants');
+    };
+
     onTermSubmit = async term => {
         const resp = await YouTube.get('/search', {
             params: {
